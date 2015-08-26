@@ -29,6 +29,15 @@ static NSString* m_sDeviceType = @"iOS";
 
 static NetWorkManager* instance = nil;
 
++ (void)Call:(NSString *)num
+{
+    if ([num length] <= 0) {
+        return;
+    }
+    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel://%@", num];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+}
+
 + (void) SET_IF_NOT_NIL:(NSMutableDictionary*)dic :(NSString*)key :(id)value
 {
     if (value != nil)

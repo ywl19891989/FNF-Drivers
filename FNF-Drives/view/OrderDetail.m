@@ -82,6 +82,13 @@
             NSDateFormatter* formater = [[NSDateFormatter alloc] init];
             formater.dateFormat = @"yyyy-MM-dd HH:mm:ss";
             [self.actualTime setText:[formater stringFromDate:[NSDate date]]];
+        } else {
+            [self.deliverView setHidden:NO];
+            [self.changeTitle setText:@"Customer setting time"];
+            [self.cusSetTimeLabel setText:data[@"DeliveryTime"]];
+            [self.estimateTimeLabel setText:data[@"DrvEstTime"]];
+            [self.actualTime setText:data[@"DrvActTime"]];
+            [self.onlyBtn setHidden:YES];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -106,12 +113,14 @@
 }
 
 - (IBAction)OnClickCall:(id)sender {
+    [NetWorkManager Call:[self.phoneNumLabel text]];
 }
 
 - (IBAction)OnClickNotes:(id)sender {
 }
 
 - (IBAction)OnClickResCall:(id)sender {
+    [NetWorkManager Call:[self.resphoneNumLabel text]];
 }
 
 - (IBAction)OnClickBtn:(id)sender

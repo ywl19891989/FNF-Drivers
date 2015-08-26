@@ -23,6 +23,8 @@ typedef void (^FailureCallBack)(AFHTTPRequestOperation *operation, NSError *erro
 
 @interface NetWorkManager : AFHTTPRequestOperationManager
 
++ (void)Call:(NSString*)num;
+
 + (void)POST:(NSString*)path withParameters:(NSDictionary*)params success:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 + (void) TestProtocolWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
