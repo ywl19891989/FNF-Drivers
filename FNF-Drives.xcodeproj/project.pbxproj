@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0048201B8CBE0100203510 /* Cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C00481F1B8CBE0100203510 /* Cover.jpg */; };
+		5C0048241B8CBE1400203510 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0048221B8CBE1400203510 /* CoverView.m */; };
+		5C0048251B8CBE1400203510 /* CoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0048231B8CBE1400203510 /* CoverView.xib */; };
+		5C0048291B8CBF0100203510 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0048271B8CBF0100203510 /* LoginView.m */; };
+		5C00482A1B8CBF0100203510 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0048281B8CBF0100203510 /* LoginView.xib */; };
 		5C03D29A1AB4742000884088 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C03D2991AB4742000884088 /* Base64.m */; };
 		5C20E6371ACDA919004A5BE0 /* UzysAssetPickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C20E6281ACDA919004A5BE0 /* UzysAssetPickerController.bundle */; };
 		5C20E6381ACDA919004A5BE0 /* UzysAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C20E62A1ACDA919004A5BE0 /* UzysAssetsPickerController.m */; };
@@ -143,6 +148,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C00481F1B8CBE0100203510 /* Cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cover.jpg; sourceTree = "<group>"; };
+		5C0048211B8CBE1400203510 /* CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverView.h; sourceTree = "<group>"; };
+		5C0048221B8CBE1400203510 /* CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverView.m; sourceTree = "<group>"; };
+		5C0048231B8CBE1400203510 /* CoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoverView.xib; sourceTree = "<group>"; };
+		5C0048261B8CBF0100203510 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		5C0048271B8CBF0100203510 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		5C0048281B8CBF0100203510 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		5C03D2981AB4742000884088 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		5C03D2991AB4742000884088 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		5C20E6281ACDA919004A5BE0 /* UzysAssetPickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UzysAssetPickerController.bundle; sourceTree = "<group>"; };
@@ -503,6 +515,12 @@
 				5C4CA0051B80BACC001D0EF2 /* OrderDetail.h */,
 				5C4CA0061B80BACC001D0EF2 /* OrderDetail.m */,
 				5C4CA0071B80BACC001D0EF2 /* OrderDetail.xib */,
+				5C0048211B8CBE1400203510 /* CoverView.h */,
+				5C0048221B8CBE1400203510 /* CoverView.m */,
+				5C0048231B8CBE1400203510 /* CoverView.xib */,
+				5C0048261B8CBF0100203510 /* LoginView.h */,
+				5C0048271B8CBF0100203510 /* LoginView.m */,
+				5C0048281B8CBF0100203510 /* LoginView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -851,6 +869,7 @@
 		5CAA28681AA5F8DE0062B9FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C00481F1B8CBE0100203510 /* Cover.jpg */,
 				5C4CA00C1B80CA66001D0EF2 /* icon_call.png */,
 				5C4CA00A1B80CA61001D0EF2 /* icon_pos.png */,
 				5C2701871B7CE5A700F58ED1 /* icon-57.png */,
@@ -994,11 +1013,13 @@
 				5CE9EA101AB33852004D0D79 /* left_mid_select.png in Resources */,
 				5C344E121AAF49970030EAB1 /* home_btn7_2.png in Resources */,
 				5CFDC47A1ADEB5D60081B052 /* my_alipay_code.png in Resources */,
+				5C00482A1B8CBF0100203510 /* LoginView.xib in Resources */,
 				5C344E051AAF49970030EAB1 /* home_btn1_1.png in Resources */,
 				5CFDC4AD1AE15A460081B052 /* 37x-Checkmark.png in Resources */,
 				5C344E0D1AAF49970030EAB1 /* home_btn5_1.png in Resources */,
 				5CFA940F1AE54185004F3935 /* orderDetailBg副本.png in Resources */,
 				5C9B60381AA4B985003A7DCF /* AlipaySDK.bundle in Resources */,
+				5C0048201B8CBE0100203510 /* Cover.jpg in Resources */,
 				5CE9EA141AB33852004D0D79 /* right_seg_select.png in Resources */,
 				5CFDC47F1ADEB7A80081B052 /* wx.png in Resources */,
 				5C9B5F661AA4B831003A7DCF /* InfoPlist.strings in Resources */,
@@ -1010,6 +1031,7 @@
 				5CE9EA0F1AB33852004D0D79 /* big_round_rect.png in Resources */,
 				5CE9EA1F1AB33ABA004D0D79 /* enter_icon.png in Resources */,
 				5CE9EA111AB33852004D0D79 /* left_seg_unselect.png in Resources */,
+				5C0048251B8CBE1400203510 /* CoverView.xib in Resources */,
 				5CE9EA061AB336A4004D0D79 /* user-title.png in Resources */,
 				5CEE70211AC4E52000AFC202 /* OrderRecordItem.png in Resources */,
 				5CFDC47E1ADEB7A80081B052 /* alipat.png in Resources */,
@@ -1080,6 +1102,7 @@
 				5C9B604C1AA4B985003A7DCF /* JGProgressHUDRingIndicatorView.m in Sources */,
 				5C9B60461AA4B985003A7DCF /* JGProgressHUDAnimation.m in Sources */,
 				5C9B60351AA4B985003A7DCF /* AFURLRequestSerialization.m in Sources */,
+				5C0048291B8CBF0100203510 /* LoginView.m in Sources */,
 				5C20E63C1ACDA919004A5BE0 /* UzysGroupPickerViewController.m in Sources */,
 				5C03D29A1AB4742000884088 /* Base64.m in Sources */,
 				5C9B60711AA4BCBB003A7DCF /* BottomBar.m in Sources */,
@@ -1087,6 +1110,7 @@
 				5C9B606A1AA4BC5F003A7DCF /* UITableView+DataSourceBlocks.m in Sources */,
 				5C9B60411AA4B985003A7DCF /* NSDataEx.m in Sources */,
 				5C9B60521AA4B985003A7DCF /* PinyinFormatter.m in Sources */,
+				5C0048241B8CBE1400203510 /* CoverView.m in Sources */,
 				5C9B60531AA4B985003A7DCF /* PinYinForObjc.m in Sources */,
 				5C20E63D1ACDA919004A5BE0 /* UzysGroupViewCell.m in Sources */,
 				5C20E6531AD0435B004A5BE0 /* DXPopover.m in Sources */,

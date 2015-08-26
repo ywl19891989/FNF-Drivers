@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (void) jumpToCover;
++ (void) jumpToLogin;
 + (void) jumpToMain;
 + (void) jumpToOrderDetail;
 

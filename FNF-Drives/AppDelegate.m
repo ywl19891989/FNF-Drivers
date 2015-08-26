@@ -13,6 +13,8 @@
 
 #import "MainView.h"
 #import "OrderDetail.h"
+#import "CoverView.h"
+#import "LoginView.h"
 
 @implementation AppDelegate
 
@@ -21,6 +23,8 @@ static UIWindow* mainWindow;
 #define CREATE_VIEW(__TYPE__) __TYPE__* view = [[__TYPE__ alloc] initWithNibName:@""#__TYPE__"" bundle:nil]; \
 [mainWindow setRootViewController: view];
 
++ (void)jumpToCover {  CREATE_VIEW(CoverView); }
++ (void)jumpToLogin {  CREATE_VIEW(LoginView); }
 + (void)jumpToMain {  CREATE_VIEW(MainView); }
 + (void)jumpToOrderDetail {  CREATE_VIEW(OrderDetail); }
 
@@ -72,15 +76,9 @@ static MBProgressHUD *loadingAlertView = nil;
     
     mainWindow = self.window;
     
-    [AppDelegate jumpToMain];
+    [AppDelegate jumpToCover];
     
     [NetWorkManager InitUserInfo];
-    
-    [NetWorkManager GetOrderListByState:1 WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
     
     // Required
     [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |

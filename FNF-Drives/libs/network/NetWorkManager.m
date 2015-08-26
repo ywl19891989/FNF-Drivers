@@ -23,7 +23,7 @@ static NSString* m_sDeviceType = @"iOS";
 
 #define SAVE_FILE @"test.plist"
 
-#define USERID_KEY @"UserID"
+#define USERID_KEY @"ID"
 #define USERNAME_KEY @"UserName"
 #define USERMOBILE_KEY @"Mobile"
 
@@ -43,7 +43,7 @@ static NetWorkManager* instance = nil;
     
     NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] initWithDictionary:@{}];
 
-    if (m_pUserName != nil) {
+    if (m_pUserId != nil) {
         [NetWorkManager SET_IF_NOT_NIL:userInfo :USERID_KEY :m_pUserId];
     }
     
@@ -245,16 +245,22 @@ static SecKeyRef _public_key=nil;
     [NetWorkManager POST:@"UserService.asmx/GetUserByJson" withParameters:param success:success failure:failure];
 }
 
+
+//司机登录
+//URL地址：
+//http://sj.haofengsoft.com/WebService/SellerService.asmx?op=SellerLogin
+//传递JSON格式样例：
+//{
+//    "Account": "915714458@qq.com",
+//    "UserKey": "123456"
+//}
 + (void)Login:(NSDictionary *)data WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
 {
     NSDictionary* param = @{
-                            @"UserID": data[@"UserID"],
-                            @"DeviceNo": m_sDeviceNo,
-                            @"Version": m_sVersion,
-                            @"DeviceType": m_sDeviceType,
-                            @"Password": data[@"PassWord"],
+                            @"Account": data[@"UserEmail"],
+                            @"UserKey": data[@"UserPwd"],
                             };
-    [NetWorkManager POST:@"UserService.asmx/Login" withParameters:param success:success failure:failure];
+    [NetWorkManager POST:@"SellerService.asmx/SellerLogin" withParameters:param success:success failure:failure];
 }
 
 + (void)GetOrderListByState:(int)state WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
