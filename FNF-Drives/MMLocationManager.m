@@ -88,9 +88,7 @@
 
 //这里仅用本地数据库模拟上传操作
 - (void)uploadLocation:(CLLocation*)location
-{
-    NSLog(@"uploadLocation");
-    
+{   
     if ( [UIApplication sharedApplication].applicationState == UIApplicationStateActive )
     {
         //TODO HTTP upload
@@ -113,6 +111,7 @@
 - (void)uploadData:(CLLocation*)location
 {
     //TODO upload data
+    NSLog(@"============> uploadData %@", location);
 }
 
 - (void)beingBackgroundUpdateTask:(CLLocation*)location
