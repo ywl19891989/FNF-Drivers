@@ -94,7 +94,7 @@
     if ( [UIApplication sharedApplication].applicationState == UIApplicationStateActive )
     {
         //TODO HTTP upload
-        
+        [self uploadData:location];
         [self endBackgroundUpdateTask];
     }
     else//后台定位
@@ -105,19 +105,20 @@
             return;
         }
         
-        [self beingBackgroundUpdateTask];
-        
-        //TODO HTTP upload
-        //上传完成记得调用 [self endBackgroundUpdateTask];
+        [self beingBackgroundUpdateTask:location];
     }
     
 }
 
+- (void)uploadData:(CLLocation*)location
+{
+    //TODO upload data
+}
 
-- (void)beingBackgroundUpdateTask
+- (void)beingBackgroundUpdateTask:(CLLocation*)location
 {
     self.taskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        //TODO upload data
+        [self uploadData:location];
         [self endBackgroundUpdateTask];
     }];
 }
