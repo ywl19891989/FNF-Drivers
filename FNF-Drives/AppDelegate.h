@@ -16,6 +16,8 @@
 + (void) jumpToLogin;
 + (void) jumpToMain;
 + (void) jumpToOrderDetail;
++ (void) jumpToMsgList;
++ (void) jumpToMsgDetail;
 
 + (void) ShowTips:(NSString*)tipsText;
 + (void) ShowToast:(NSString*)toastText;

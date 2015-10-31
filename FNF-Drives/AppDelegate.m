@@ -15,6 +15,8 @@
 #import "OrderDetail.h"
 #import "CoverView.h"
 #import "LoginView.h"
+#import "MessageDetail.h"
+#import "MessageList.h"
 
 @implementation AppDelegate
 
@@ -27,6 +29,8 @@ static UIWindow* mainWindow;
 + (void)jumpToLogin {  CREATE_VIEW(LoginView); }
 + (void)jumpToMain {  CREATE_VIEW(MainView); }
 + (void)jumpToOrderDetail {  CREATE_VIEW(OrderDetail); }
++ (void)jumpToMsgList { CREATE_VIEW(MessageList) }
++ (void)jumpToMsgDetail { CREATE_VIEW(MessageDetail) }
 
 + (void)ShowTips:(NSString*)tipText
 {

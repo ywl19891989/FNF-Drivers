@@ -85,6 +85,7 @@ NM_PROPERTY_DEFINE(NSArray*, NewOrderList);
 NM_PROPERTY_DEFINE(NSArray*, ConfirmedOrderList);
 NM_PROPERTY_DEFINE(NSArray*, FinishedOrderList);
 NM_PROPERTY_DEFINE(NSDictionary*, CurOrderInfo);
+NM_PROPERTY_DEFINE(NSDictionary*, CurMsgInfo);
 
 //----------------------------------------------
 
@@ -268,6 +269,8 @@ static SecKeyRef _public_key=nil;
     NSDictionary* param = @{
                             @"Account": data[@"UserEmail"],
                             @"UserKey": data[@"UserPwd"],
+                            @"LastLoginControlID": [SecurityData deviceId],
+                            @"JpushID": @"090dbd90b96"
                             };
     [NetWorkManager POST:@"SellerService.asmx/SellerLogin" withParameters:param success:success failure:failure];
 }
@@ -309,6 +312,38 @@ static SecKeyRef _public_key=nil;
     [param setValue:[formater stringFromDate:[NSDate date]] forKey:@"DrvActTime"];
     
     [NetWorkManager POST:@"DriverService.asmx/UpdateDriverDeliveryTime" withParameters:param success:success failure:failure];
+}
+
++ (void)GetMessageListWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+//    1.1.6消息列表
+//    URL地址：
+//    http://fnf.haofengsoft.com/WebService/DriverService.asmx?op=MessageDriverList
+//    传递JSON格式样例：
+//    {
+//        "ToUserID":"2"
+//    }
+    
+    NSDictionary* params = @{
+                             @"ToUserID": [NetWorkManager GetUserId]
+                             };
+    
+    [NetWorkManager POST:@"DriverService.asmx/MessageDriverList" withParameters:params success:success failure:failure];
+}
+
++ (void)GetMessageDetail:(NSString *)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+//    http://fnf.haofengsoft.com/WebService/SellerService.asmx?op=MessageDriverDetailByOrderCode
+//    传递JSON格式样例：
+//    {
+//        "OrderCode":"SO20150819223028634"
+    //    }
+    
+    NSDictionary* params = @{
+                             @"OrderCode": orderId
+                             };
+    
+    [NetWorkManager POST:@"DriverService.asmx/MessageDriverDetailByOrderCode" withParameters:params success:success failure:failure];
 }
 
 @end

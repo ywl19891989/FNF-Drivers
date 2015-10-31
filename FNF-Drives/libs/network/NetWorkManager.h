@@ -34,6 +34,8 @@ typedef void (^FailureCallBack)(AFHTTPRequestOperation *operation, NSError *erro
 + (void) GetOrderDetailByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) ConfirmOrderByID:(NSInteger)orderId AndEsTime:(NSString*)time WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) DeliveredOrderByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
++ (void) GetMessageListWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
++ (void) GetMessageDetail:(NSString*)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 + (void) SetUserInfo:(NSDictionary*)info;
 + (void) InitUserInfo;
@@ -42,6 +44,7 @@ NM_PROPERTY_DECLARE(NSArray*, NewOrderList);
 NM_PROPERTY_DECLARE(NSArray*, ConfirmedOrderList);
 NM_PROPERTY_DECLARE(NSArray*, FinishedOrderList);
 NM_PROPERTY_DECLARE(NSDictionary*, CurOrderInfo);
+NM_PROPERTY_DECLARE(NSDictionary*, CurMsgInfo);
 
 NM_PROPERTY_DECLARE(NSString*, UserId);
 NM_PROPERTY_DECLARE(NSString*, UserName);

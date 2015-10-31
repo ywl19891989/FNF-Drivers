@@ -12,6 +12,8 @@
 
 @interface BottomBar : UIView {
     UIButton* _menuBtn[BTN_COUNT];
+    UIImageView* _menuBtnIcon1[BTN_COUNT];
+    UIImageView* _menuBtnIcon2[BTN_COUNT];
 }
 
 - (void)activeTag:(int)tag;
