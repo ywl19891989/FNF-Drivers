@@ -10,6 +10,7 @@
 #import "libs/JGProgressHUD/JGProgressHUD.h"
 #import "libs/MBProgressHUD/MBProgressHUD.h"
 #import "APService.h"
+#import "MMLocationManager.h"
 
 #import "MainView.h"
 #import "OrderDetail.h"
@@ -94,6 +95,14 @@ static MBProgressHUD *loadingAlertView = nil;
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kAPNetworkDidReceiveMessageNotification object:nil];
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+    [[MMLocationManager sharedManager] setAllowsBackgroundLocationUpdates:YES];
+#elif __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    [[MMLocationManager sharedManager] requestAlwaysAuthorization];
+#endif
+    
+    [[MMLocationManager sharedManager] startMonitoringSignificantLocationChanges];
 
     return YES;
 }

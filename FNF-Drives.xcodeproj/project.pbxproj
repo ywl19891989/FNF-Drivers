@@ -118,6 +118,7 @@
 		5CAA28661AA5F7980062B9FC /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA28631AA5F7980062B9FC /* OBShapedButton.m */; };
 		5CAA28671AA5F7980062B9FC /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA28651AA5F7980062B9FC /* UIImage+ColorAtPixel.m */; };
 		5CAA286A1AA5F8DE0062B9FC /* liubianxing_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAA28691AA5F8DE0062B9FC /* liubianxing_03.png */; };
+		5CBA55261BE52E55000DBA33 /* MMLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA55251BE52E55000DBA33 /* MMLocationManager.m */; };
 		5CDEFED21AE6ACA4006E3CCD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDEFED11AE6ACA4006E3CCD /* CFNetwork.framework */; };
 		5CDEFED41AE6ACB1006E3CCD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDEFED31AE6ACB1006E3CCD /* CoreFoundation.framework */; };
 		5CDEFED61AE6ACBB006E3CCD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDEFED51AE6ACBB006E3CCD /* CoreTelephony.framework */; };
@@ -419,6 +420,8 @@
 		5CAA28641AA5F7980062B9FC /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
 		5CAA28651AA5F7980062B9FC /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		5CAA28691AA5F8DE0062B9FC /* liubianxing_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liubianxing_03.png; sourceTree = "<group>"; };
+		5CBA55241BE52E55000DBA33 /* MMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLocationManager.h; sourceTree = "<group>"; };
+		5CBA55251BE52E55000DBA33 /* MMLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLocationManager.m; sourceTree = "<group>"; };
 		5CDEFED11AE6ACA4006E3CCD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5CDEFED31AE6ACB1006E3CCD /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		5CDEFED51AE6ACBB006E3CCD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -631,6 +634,8 @@
 				5C9B5F6B1AA4B831003A7DCF /* AppDelegate.m */,
 				5C9B5F6D1AA4B831003A7DCF /* Images.xcassets */,
 				5C9B5F621AA4B831003A7DCF /* Supporting Files */,
+				5CBA55241BE52E55000DBA33 /* MMLocationManager.h */,
+				5CBA55251BE52E55000DBA33 /* MMLocationManager.m */,
 			);
 			path = "FNF-Drives";
 			sourceTree = "<group>";
@@ -1137,6 +1142,7 @@
 				5C9B602E1AA4B985003A7DCF /* AFHTTPRequestOperation.m in Sources */,
 				5C9B60451AA4B985003A7DCF /* JGProgressHUD.m in Sources */,
 				5C9B5F6C1AA4B831003A7DCF /* AppDelegate.m in Sources */,
+				5CBA55261BE52E55000DBA33 /* MMLocationManager.m in Sources */,
 				5C7E711F1B9F2B830052FFED /* MessageDetailCell.m in Sources */,
 				5C9B604E1AA4B985003A7DCF /* ChineseToPinyinResource.m in Sources */,
 				5C9B606B1AA4BC5F003A7DCF /* UITableView+DelegateBlocks.m in Sources */,
