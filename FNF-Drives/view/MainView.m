@@ -42,6 +42,8 @@
 }
 
 - (IBAction)OnClickSetting:(id)sender {
+    [NetWorkManager SetUserInfo:@{}];
+    [AppDelegate jumpToLogin];
 }
 
 - (IBAction)OnTabChange:(id)sender

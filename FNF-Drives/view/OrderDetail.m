@@ -73,6 +73,16 @@
             [self.cusSetTimeLabel setText:data[@"RestaurantFinishTime"]];
             [self.onlyBtn setTitle:@"Confirm" forState:UIControlStateNormal];
         } else if (m_iCurOrderState == 2) {
+            [self.deliverView setHidden:YES];
+            [self.changeTitle setText:@"Customer setting time"];
+            [self.cusSetTimeLabel setText:data[@"DeliveryTime"]];
+            [self.estimateTimeLabel setText:data[@"DrvEstTime"]];
+            [self.onlyBtn setTitle:@"Pickup" forState:UIControlStateNormal];
+            
+            NSDateFormatter* formater = [[NSDateFormatter alloc] init];
+            formater.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+            [self.actualTime setText:[formater stringFromDate:[NSDate date]]];
+        } else if (m_iCurOrderState == 3) {
             [self.deliverView setHidden:NO];
             [self.changeTitle setText:@"Customer setting time"];
             [self.cusSetTimeLabel setText:data[@"DeliveryTime"]];
@@ -131,15 +141,17 @@
             return;
         }
         
-        [NetWorkManager ConfirmOrderByID:m_iCurOrderID AndEsTime:[self.estimateTimeLabel text] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
+        [NetWorkManager UpdateOrder:m_iCurOrderID AndTime:[self.estimateTimeLabel text] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
             if (data) {
                 [AppDelegate jumpToMain];
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];
-    } else if (m_iCurOrderState == 2) {
-        [NetWorkManager DeliveredOrderByID:m_iCurOrderID WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
+    } else if (m_iCurOrderState == 2 || m_iCurOrderState == 3) {
+        NSDateFormatter* formater = [[NSDateFormatter alloc] init];
+        formater.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        [NetWorkManager UpdateOrder:m_iCurOrderID AndTime:[formater stringFromDate:[NSDate date]] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
             if (data) {
                 [AppDelegate jumpToMain];
             }

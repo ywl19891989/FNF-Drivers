@@ -267,12 +267,12 @@ static SecKeyRef _public_key=nil;
 + (void)Login:(NSDictionary *)data WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
 {
     NSDictionary* param = @{
-                            @"Account": data[@"UserEmail"],
-                            @"UserKey": data[@"UserPwd"],
+                            @"UserAccount": data[@"UserEmail"],
+                            @"Passward": data[@"UserPwd"],
                             @"LastLoginControlID": [SecurityData deviceId],
                             @"JpushID": @"090dbd90b96"
                             };
-    [NetWorkManager POST:@"SellerService.asmx/SellerLogin" withParameters:param success:success failure:failure];
+    [NetWorkManager POST:@"DriverService.asmx/DriverLogin" withParameters:param success:success failure:failure];
 }
 
 + (void)GetOrderListByState:(int)state WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
@@ -280,6 +280,7 @@ static SecKeyRef _public_key=nil;
     NSDictionary* param = @{
                     @"PageIndex": @"0",
                     @"PageSize": @"10",
+                    @"DriverID": [NetWorkManager GetUserId],
                     @"Status" : [NSString stringWithFormat:@"%d", state],
                     };
 
@@ -289,7 +290,7 @@ static SecKeyRef _public_key=nil;
 + (void)GetOrderDetailByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
 {
     NSMutableDictionary* param = [NSMutableDictionary dictionaryWithCapacity:10];
-    [param setValue:[NSNumber numberWithInt:(NSUInteger)orderId] forKey:@"ID"];
+    [param setValue:[NSNumber numberWithInt:(NSUInteger)orderId] forKey:@"OrderID"];
     
     [NetWorkManager POST:@"DriverService.asmx/GetOrderDetailByID" withParameters:param success:success failure:failure];
 }
@@ -344,6 +345,26 @@ static SecKeyRef _public_key=nil;
                              };
     
     [NetWorkManager POST:@"DriverService.asmx/MessageDriverDetailByOrderCode" withParameters:params success:success failure:failure];
+}
+
++ (void)UpLoadLocation:(CLLocation *)location WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    NSDictionary* params = @{
+                            @"DriverID": [NetWorkManager GetUserId],
+                            @"Latitude": [NSString stringWithFormat:@"%f", location.coordinate.latitude],
+                            @"Longitude": [NSString stringWithFormat:@"%f", location.coordinate.longitude],
+                            };
+    [NetWorkManager POST:@"DriverService.asmx/UploadLocation" withParameters:params success:success failure:failure];
+}
+
+
++ (void)UpdateOrder:(NSInteger)orderId AndTime:(NSString*)time WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    NSMutableDictionary* param = [NSMutableDictionary dictionaryWithCapacity:10];
+    [param setValue:[NSNumber numberWithInt:(NSUInteger)orderId] forKey:@"OrderID"];
+    [param setValue:time forKey:@"UpdateTime"];
+    
+    [NetWorkManager POST:@"DriverService.asmx/UpdateOrder" withParameters:param success:success failure:failure];
 }
 
 @end

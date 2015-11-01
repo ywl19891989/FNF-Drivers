@@ -7,6 +7,7 @@
 //
 
 #import "MMLocationManager.h"
+#import "NetWorkManager.h"
 
 @interface MMLocationManager()<CLLocationManagerDelegate>
 
@@ -112,6 +113,14 @@
 {
     //TODO upload data
     NSLog(@"============> uploadData %@", location);
+    if ([NetWorkManager GetUserId] == nil) {
+        return;
+    }
+    [NetWorkManager UpLoadLocation:location WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 - (void)beingBackgroundUpdateTask:(CLLocation*)location

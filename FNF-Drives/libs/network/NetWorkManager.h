@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPRequestOperationManager.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define NM_PROPERTY_DECLARE(__TYPE__, __FUNC__) \
 + (void) Set##__FUNC__:(__TYPE__)var; \
@@ -36,6 +37,8 @@ typedef void (^FailureCallBack)(AFHTTPRequestOperation *operation, NSError *erro
 + (void) DeliveredOrderByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) GetMessageListWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) GetMessageDetail:(NSString*)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
++ (void) UpLoadLocation:(CLLocation*)location WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
++ (void) UpdateOrder:(NSInteger)orderId AndTime:(NSString*)time WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 + (void) SetUserInfo:(NSDictionary*)info;
 + (void) InitUserInfo;

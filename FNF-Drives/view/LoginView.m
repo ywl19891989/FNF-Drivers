@@ -7,6 +7,7 @@
 //
 
 #import "LoginView.h"
+#import "MMLocationManager.h"
 
 @interface LoginView ()
 
