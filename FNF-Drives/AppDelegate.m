@@ -35,7 +35,7 @@ static UIWindow* mainWindow;
 
 + (void)ShowTips:(NSString*)tipText
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"信息提示" message:tipText delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tips" message:tipText delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
     alert.tag = 10000;
     [alert show];
 }
@@ -63,7 +63,7 @@ static MBProgressHUD *loadingAlertView = nil;
 {
     loadingAlertView = [MBProgressHUD showHUDAddedTo:mainWindow animated:YES];
     loadingAlertView.userInteractionEnabled = true;
-	loadingAlertView.labelText = @"加载中";
+	loadingAlertView.labelText = @"loading...";
 }
 
 + (void)HideLoading
