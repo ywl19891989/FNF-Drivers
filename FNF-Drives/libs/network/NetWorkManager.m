@@ -155,7 +155,7 @@ NM_PROPERTY_DEFINE(NSDictionary*, CurMsgInfo);
             success(operation, nil);
         } else {
             success(operation, dic[@"msg"]);
-            [AppDelegate ShowToast:@"加载完成!"];
+            [AppDelegate ShowToast:@"loading complete!"];
         }
     } failure:^(AFHTTPRequestOperation *operation, id responseObject){
         [AppDelegate HideLoading];
