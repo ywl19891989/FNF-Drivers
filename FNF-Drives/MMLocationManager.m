@@ -117,7 +117,7 @@
         return;
     }
     [NetWorkManager UpLoadLocation:location WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
-        
+        NSLog(@"success! %@", data);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
