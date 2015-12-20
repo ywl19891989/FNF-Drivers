@@ -84,6 +84,11 @@
 - (IBAction)OnChangeOrderType:(id)sender {
 }
 
+- (IBAction)OnClickSettings:(id)sender
+{
+    [AppDelegate jumpToSettings];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

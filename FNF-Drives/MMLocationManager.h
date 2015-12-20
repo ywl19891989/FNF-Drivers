@@ -18,4 +18,7 @@
 @property (nonatomic, assign) CGFloat minFilter;
 @property (nonatomic, assign) CGFloat minInteval;
 
+- (BOOL) IsOpenUpload;
+- (void) Switch;
+
 @end

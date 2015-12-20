@@ -18,6 +18,7 @@
 #import "LoginView.h"
 #import "MessageDetail.h"
 #import "MessageList.h"
+#import "SettingsView.h"
 
 @implementation AppDelegate
 
@@ -32,6 +33,7 @@ static UIWindow* mainWindow;
 + (void)jumpToOrderDetail {  CREATE_VIEW(OrderDetail); }
 + (void)jumpToMsgList { CREATE_VIEW(MessageList) }
 + (void)jumpToMsgDetail { CREATE_VIEW(MessageDetail) }
++ (void)jumpToSettings { CREATE_VIEW(SettingsView); }
 
 + (void)ShowTips:(NSString*)tipText
 {
@@ -95,15 +97,9 @@ static MBProgressHUD *loadingAlertView = nil;
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kAPNetworkDidReceiveMessageNotification object:nil];
-    
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
-    [[MMLocationManager sharedManager] setAllowsBackgroundLocationUpdates:YES];
-#elif __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-    [[MMLocationManager sharedManager] requestAlwaysAuthorization];
-#endif
-    
-    [[MMLocationManager sharedManager] startMonitoringSignificantLocationChanges];
 
+    [MMLocationManager sharedManager];
+    
     return YES;
 }
 

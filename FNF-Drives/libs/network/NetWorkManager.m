@@ -16,8 +16,8 @@
 
 @implementation NetWorkManager
 
-static NSString* urlBase = @"http://FNF.haofengsoft.com/WebService/";
-//static NSString* urlBase = @"http://www.fnf.net.au/WebService/";
+//static NSString* urlBase = @"http://FNF.haofengsoft.com/WebService/";
+static NSString* urlBase = @"http://www.fnf.net.au/WebService/";
 static NSString* m_sVersion = @"1.0";
 static NSString* m_sDeviceType = @"iOS";
 #define m_sDeviceNo [SecurityData deviceId]

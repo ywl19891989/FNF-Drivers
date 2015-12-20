@@ -159,6 +159,8 @@
 		5CFE0A6D1AB0967F005F0BBC /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE0A6A1AB0967F005F0BBC /* home_icon.png */; };
 		5CFE0A6E1AB0967F005F0BBC /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE0A6B1AB0967F005F0BBC /* user_icon.png */; };
 		5CFF19A91AC4648F005E65E7 /* orderDetailBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */; };
+		CE920D091C26A0ED00EB9A7B /* SettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE920D071C26A0ED00EB9A7B /* SettingsView.m */; };
+		CE920D0A1C26A0ED00EB9A7B /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE920D081C26A0ED00EB9A7B /* SettingsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -463,6 +465,9 @@
 		5CFE0A6A1AB0967F005F0BBC /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		5CFE0A6B1AB0967F005F0BBC /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
 		5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orderDetailBg.png; sourceTree = "<group>"; };
+		CE920D061C26A0ED00EB9A7B /* SettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsView.h; sourceTree = "<group>"; };
+		CE920D071C26A0ED00EB9A7B /* SettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsView.m; sourceTree = "<group>"; };
+		CE920D081C26A0ED00EB9A7B /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +566,9 @@
 				5C4CA0051B80BACC001D0EF2 /* OrderDetail.h */,
 				5C4CA0061B80BACC001D0EF2 /* OrderDetail.m */,
 				5C4CA0071B80BACC001D0EF2 /* OrderDetail.xib */,
+				CE920D061C26A0ED00EB9A7B /* SettingsView.h */,
+				CE920D071C26A0ED00EB9A7B /* SettingsView.m */,
+				CE920D081C26A0ED00EB9A7B /* SettingsView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1111,6 +1119,7 @@
 				5CFBFCF81AB1E2F4001D658D /* LOGO.png in Resources */,
 				5C20E6391ACDA919004A5BE0 /* UzysAssetsPickerController.xib in Resources */,
 				5CFF19A91AC4648F005E65E7 /* orderDetailBg.png in Resources */,
+				CE920D0A1C26A0ED00EB9A7B /* SettingsView.xib in Resources */,
 				5C2701861B7CE59E00F58ED1 /* icon-57@2x.png in Resources */,
 				5CE9EA131AB33852004D0D79 /* mid_seg_unselect.png in Resources */,
 				5C344E0F1AAF49970030EAB1 /* home_btn6_1.png in Resources */,
@@ -1140,6 +1149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9B602E1AA4B985003A7DCF /* AFHTTPRequestOperation.m in Sources */,
+				CE920D091C26A0ED00EB9A7B /* SettingsView.m in Sources */,
 				5C9B60451AA4B985003A7DCF /* JGProgressHUD.m in Sources */,
 				5C9B5F6C1AA4B831003A7DCF /* AppDelegate.m in Sources */,
 				5CBA55261BE52E55000DBA33 /* MMLocationManager.m in Sources */,

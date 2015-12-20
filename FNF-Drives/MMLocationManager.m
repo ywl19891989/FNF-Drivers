@@ -9,8 +9,12 @@
 #import "MMLocationManager.h"
 #import "NetWorkManager.h"
 
-@interface MMLocationManager()<CLLocationManagerDelegate>
+#define UPLOAD_KEY @"upload-key"
 
+@interface MMLocationManager()<CLLocationManagerDelegate>
+{
+    BOOL m_bIsOpen;
+}
 @property (nonatomic, assign) UIBackgroundTaskIdentifier taskIdentifier;
 
 @end
@@ -38,11 +42,47 @@
         self.minFilter = 50;
         self.minInteval = 10;
         
+        NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+        m_bIsOpen = [[defaults objectForKey:UPLOAD_KEY] boolValue];
+        
         self.delegate = self;
         self.distanceFilter  = self.minFilter;
         self.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        [self CheckUpload];
     }
     return self;
+}
+
+- (void)CheckUpload
+{
+    if (m_bIsOpen) {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+        [self setAllowsBackgroundLocationUpdates:YES];
+#elif __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+        [self requestAlwaysAuthorization];
+#endif
+        
+        [self startMonitoringSignificantLocationChanges];
+    } else {
+        [self stopMonitoringSignificantLocationChanges];
+    }
+}
+
+- (BOOL)IsOpenUpload
+{
+    return m_bIsOpen;
+}
+
+- (void)Switch
+{
+    m_bIsOpen = !m_bIsOpen;
+    
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSNumber numberWithBool:m_bIsOpen] forKey:UPLOAD_KEY];
+    [defaults synchronize];
+    
+    [self CheckUpload];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
