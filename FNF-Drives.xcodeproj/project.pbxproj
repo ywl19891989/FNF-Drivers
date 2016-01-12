@@ -1314,8 +1314,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: soft haofeng (BW9H4H538A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: soft haofeng (BW9H4H538A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sun Wu Qiang (KQMUG5GX37)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sun Wu Qiang (KQMUG5GX37)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",
@@ -1335,7 +1335,7 @@
 					"$(PROJECT_DIR)/FNF-Drives/libs/JPush",
 				);
 				PRODUCT_NAME = "FNF-Drives";
-				PROVISIONING_PROFILE = "cbe1d40b-5982-4886-bf1b-176ab5df64e5";
+				PROVISIONING_PROFILE = "5c0a6738-3d08-48bd-8ea8-821f6ecb780c";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1346,8 +1346,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: soft haofeng (BW9H4H538A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: soft haofeng (BW9H4H538A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ShangHai Peony Aviation Services Co., Ltd. (MH95AT7RTQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ShangHai Peony Aviation Services Co., Ltd. (MH95AT7RTQ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",
@@ -1367,7 +1367,7 @@
 					"$(PROJECT_DIR)/FNF-Drives/libs/JPush",
 				);
 				PRODUCT_NAME = "FNF-Drives";
-				PROVISIONING_PROFILE = "cbe1d40b-5982-4886-bf1b-176ab5df64e5";
+				PROVISIONING_PROFILE = "d0b298d3-a0f6-4a83-addb-8b979f7c2de4";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
