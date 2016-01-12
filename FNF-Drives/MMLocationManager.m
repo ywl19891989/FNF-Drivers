@@ -38,9 +38,9 @@
     self = [super init];
     if ( self )
     {
-        self.minSpeed = 3;
-        self.minFilter = 50;
-        self.minInteval = 10;
+        self.minSpeed = 0;
+        self.minFilter = 0;
+        self.minInteval = 3;
         
         NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
         m_bIsOpen = [[defaults objectForKey:UPLOAD_KEY] boolValue];
@@ -57,15 +57,19 @@
 - (void)CheckUpload
 {
     if (m_bIsOpen) {
+        
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
         [self setAllowsBackgroundLocationUpdates:YES];
 #elif __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
         [self requestAlwaysAuthorization];
+        [self requestWhenInUseAuthorization];
 #endif
         
         [self startMonitoringSignificantLocationChanges];
+        [self startUpdatingLocation];
     } else {
         [self stopMonitoringSignificantLocationChanges];
+        [self stopUpdatingLocation];
     }
 }
 
@@ -76,6 +80,16 @@
 
 - (void)Switch
 {
+    if (!m_bIsOpen) {
+        // 判断定位操作是否被允许
+        if(![CLLocationManager locationServicesEnabled]) {
+            //提示用户无法进行定位操作
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Message" message:@"定位不成功 ,请确认开启定位!" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
+            [alertView show];
+            return;
+        }
+    }
+    
     m_bIsOpen = !m_bIsOpen;
     
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
@@ -85,11 +99,16 @@
     [self CheckUpload];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError %@", error);
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *location = locations[0];
     
-    NSLog(@"%@",location);
+    NSLog(@"didUpdateLocations %@",location);
     
     [self adjustDistanceFilter:location];
     [self uploadLocation:location];
@@ -103,7 +122,7 @@
  */
 - (void)adjustDistanceFilter:(CLLocation*)location
 {
-//    NSLog(@"adjust:%f",location.speed);
+    NSLog(@"adjust:%f",location.speed);
     
     if ( location.speed < self.minSpeed )
     {
