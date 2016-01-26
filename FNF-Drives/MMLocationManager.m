@@ -38,9 +38,9 @@
     self = [super init];
     if ( self )
     {
-        self.minSpeed = 0;
-        self.minFilter = 0;
-        self.minInteval = 3;
+        self.minSpeed = 4;
+        self.minFilter = 3;
+        self.minInteval = 10;
         
         NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
         m_bIsOpen = [[defaults objectForKey:UPLOAD_KEY] boolValue];

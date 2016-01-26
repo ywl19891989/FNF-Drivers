@@ -1249,8 +1249,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: soft haofeng (BW9H4H538A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: soft haofeng (BW9H4H538A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Felix Gu (63KWW72ZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Felix Gu (63KWW72ZM6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1268,7 +1268,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "cbe1d40b-5982-4886-bf1b-176ab5df64e5";
+				PROVISIONING_PROFILE = "11134722-508f-4c65-93f5-0523a6f62b09";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -1290,8 +1290,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: soft haofeng (BW9H4H538A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: soft haofeng (BW9H4H538A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FNF AUSTRALIA PTY LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FNF AUSTRALIA PTY LTD";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1302,7 +1302,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "cbe1d40b-5982-4886-bf1b-176ab5df64e5";
+				PROVISIONING_PROFILE = "f3ecded1-a183-410d-8527-f136ba3aee55";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1314,8 +1314,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sun Wu Qiang (KQMUG5GX37)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sun Wu Qiang (KQMUG5GX37)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Felix Gu (63KWW72ZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Felix Gu (63KWW72ZM6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",
@@ -1335,7 +1335,7 @@
 					"$(PROJECT_DIR)/FNF-Drives/libs/JPush",
 				);
 				PRODUCT_NAME = "FNF-Drives";
-				PROVISIONING_PROFILE = "5c0a6738-3d08-48bd-8ea8-821f6ecb780c";
+				PROVISIONING_PROFILE = "11134722-508f-4c65-93f5-0523a6f62b09";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1346,8 +1346,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ShangHai Peony Aviation Services Co., Ltd. (MH95AT7RTQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ShangHai Peony Aviation Services Co., Ltd. (MH95AT7RTQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FNF AUSTRALIA PTY LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FNF AUSTRALIA PTY LTD";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",
@@ -1367,7 +1367,7 @@
 					"$(PROJECT_DIR)/FNF-Drives/libs/JPush",
 				);
 				PRODUCT_NAME = "FNF-Drives";
-				PROVISIONING_PROFILE = "d0b298d3-a0f6-4a83-addb-8b979f7c2de4";
+				PROVISIONING_PROFILE = "f3ecded1-a183-410d-8527-f136ba3aee55";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};

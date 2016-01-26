@@ -1,5 +1,5 @@
 {
-	"APS_FOR_PRODUCTION" = 0;
+	"APS_FOR_PRODUCTION" = 1;
 	CHANNEL = "Publish channel";
-	"APP_KEY" = "7843a3ea607119703bb13940";
+	"APP_KEY" = "6e74e302a1c877e1fb328297";
 }
