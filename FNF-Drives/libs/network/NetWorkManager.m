@@ -25,7 +25,7 @@ static NSString* m_sDeviceType = @"iOS";
 #define SAVE_FILE @"test.plist"
 
 #define USERID_KEY @"ID"
-#define USERNAME_KEY @"UserName"
+#define USERNAME_KEY @"UserAccount"
 #define USERMOBILE_KEY @"Mobile"
 
 static NetWorkManager* instance = nil;
@@ -62,11 +62,13 @@ static NetWorkManager* instance = nil;
 + (void)SetUserInfo:(NSDictionary *)info
 {
     m_pUserId = info[USERID_KEY];
+    m_pUserName = info[USERNAME_KEY];
     
     NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] initWithDictionary:@{}];
 
     if (m_pUserId != nil) {
         [NetWorkManager SET_IF_NOT_NIL:userInfo :USERID_KEY :m_pUserId];
+        [NetWorkManager SET_IF_NOT_NIL:userInfo :USERNAME_KEY :m_pUserName];
     }
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
@@ -293,7 +295,7 @@ static SecKeyRef _public_key=nil;
 {
     NSDictionary* param = @{
                     @"PageIndex": @"0",
-                    @"PageSize": @"10",
+                    @"PageSize": @"99",
                     @"DriverID": [NetWorkManager GetUserId],
                     @"Status" : [NSString stringWithFormat:@"%d", state],
                     };

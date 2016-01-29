@@ -113,29 +113,18 @@ static MBProgressHUD *loadingAlertView = nil;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    
-    // Required
     [APService registerDeviceToken:deviceToken];
-    
-    
 }
 
 static NSString* pushOrderId = nil;
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    
-    // Required
     NSLog(@"userInfo1 %@", userInfo);
-    
     [APService handleRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    
     NSLog(@"userInfo2 %@", userInfo);
-    
-    // IOS 7 Support Required
     [APService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
 }

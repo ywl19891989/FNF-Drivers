@@ -53,6 +53,7 @@
         [NetWorkManager Login:param WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
             if (data) {
                 NSMutableDictionary* realData = [NSMutableDictionary dictionaryWithDictionary:data];
+                [NetWorkManager SetUserName:email];
                 [NetWorkManager SetUserInfo:realData];
                 [NetWorkManager RegisterPush];
                 [AppDelegate jumpToMain];
