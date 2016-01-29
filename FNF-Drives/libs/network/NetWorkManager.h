@@ -49,6 +49,8 @@ NM_PROPERTY_DECLARE(NSArray*, FinishedOrderList);
 NM_PROPERTY_DECLARE(NSDictionary*, CurOrderInfo);
 NM_PROPERTY_DECLARE(NSDictionary*, CurMsgInfo);
 
+NM_PROPERTY_DECLARE(NSString*, CurAddress);
+
 NM_PROPERTY_DECLARE(NSString*, UserId);
 NM_PROPERTY_DECLARE(NSString*, UserName);
 

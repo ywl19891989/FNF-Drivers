@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DF5637CD-275B-40CA-8A13-17A45D93BAB0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>FNF-Drives</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A82F44712A67A86A199700694F47B304D3DB2433</key>
 		<string>github.com:ywl19891989/FNF-Drivers.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FNF-Drives.xcodeproj</string>
+	<string>FNF-Drives.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A82F44712A67A86A199700694F47B304D3DB2433</key>

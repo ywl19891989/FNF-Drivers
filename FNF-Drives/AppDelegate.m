@@ -19,6 +19,7 @@
 #import "MessageDetail.h"
 #import "MessageList.h"
 #import "SettingsView.h"
+#import "MapView.h"
 
 @implementation AppDelegate
 
@@ -34,6 +35,7 @@ static UIWindow* mainWindow;
 + (void)jumpToMsgList { CREATE_VIEW(MessageList) }
 + (void)jumpToMsgDetail { CREATE_VIEW(MessageDetail) }
 + (void)jumpToSettings { CREATE_VIEW(SettingsView); }
++ (void)jumpToMap { CREATE_VIEW(MapView); }
 
 + (void)ShowTips:(NSString*)tipText
 {

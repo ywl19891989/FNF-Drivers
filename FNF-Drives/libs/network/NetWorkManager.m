@@ -35,8 +35,10 @@ static NetWorkManager* instance = nil;
     if ([num length] <= 0) {
         return;
     }
-    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel://%@", num];
+    NSString * str = [NSString stringWithFormat:@"tel://%@", num];
+    str = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    NSLog(@"======> openURL %@", str);
 }
 
 + (void) SET_IF_NOT_NIL:(NSMutableDictionary*)dic :(NSString*)key :(id)value
@@ -87,6 +89,7 @@ NM_PROPERTY_DEFINE(NSArray*, ConfirmedOrderList);
 NM_PROPERTY_DEFINE(NSArray*, FinishedOrderList);
 NM_PROPERTY_DEFINE(NSDictionary*, CurOrderInfo);
 NM_PROPERTY_DEFINE(NSDictionary*, CurMsgInfo);
+NM_PROPERTY_DEFINE(NSString*, CurAddress);
 
 //----------------------------------------------
 

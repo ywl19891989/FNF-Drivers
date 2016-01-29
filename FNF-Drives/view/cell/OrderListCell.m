@@ -24,7 +24,11 @@
 
 - (void)setInfo:(NSDictionary *)info
 {
-    [self.orderNum setText:[NSString stringWithFormat:@"%@", info[@"ID"]]];
+    NSString* orderCode = [NSString stringWithFormat:@"%@", info[@"OrderCode"]];
+    if ([orderCode length] > 4) {
+        orderCode = [orderCode substringFromIndex:[orderCode length] - 4];
+    }
+    [self.orderNum setText:orderCode];
     [self.orderDate setText:[NSString stringWithFormat:@"%@", info[@"CreateTime"]]];
     [self.orderCity setText:[NSString stringWithFormat:@"%@", info[@"City"]]];
     [self.orderRemark setText:[NSString stringWithFormat:@"%@", info[@"Remark"]]];

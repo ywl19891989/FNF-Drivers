@@ -8,12 +8,14 @@
 
 #import "MMLocationManager.h"
 #import "NetWorkManager.h"
+#import "AppDelegate.h"
 
 #define UPLOAD_KEY @"upload-key"
 
 @interface MMLocationManager()<CLLocationManagerDelegate>
 {
     BOOL m_bIsOpen;
+    CLLocationManager *m_pLocationManager;
 }
 @property (nonatomic, assign) UIBackgroundTaskIdentifier taskIdentifier;
 
@@ -45,9 +47,11 @@
         NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
         m_bIsOpen = [[defaults objectForKey:UPLOAD_KEY] boolValue];
         
-        self.delegate = self;
-        self.distanceFilter  = self.minFilter;
-        self.desiredAccuracy = kCLLocationAccuracyBest;
+        m_pLocationManager = [[CLLocationManager alloc] init];
+        
+        m_pLocationManager.delegate = self;
+        m_pLocationManager.distanceFilter  = self.minFilter;
+        m_pLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
         
         [self CheckUpload];
     }
@@ -59,17 +63,20 @@
     if (m_bIsOpen) {
         
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
-        [self setAllowsBackgroundLocationUpdates:YES];
-#elif __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-        [self requestAlwaysAuthorization];
-        [self requestWhenInUseAuthorization];
+        [m_pLocationManager setAllowsBackgroundLocationUpdates:YES];
 #endif
+        if ([m_pLocationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [m_pLocationManager requestAlwaysAuthorization];
+        }
+        if ([m_pLocationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [m_pLocationManager requestWhenInUseAuthorization];
+        }
         
-        [self startMonitoringSignificantLocationChanges];
-        [self startUpdatingLocation];
+        [m_pLocationManager startMonitoringSignificantLocationChanges];
+        [m_pLocationManager startUpdatingLocation];
     } else {
-        [self stopMonitoringSignificantLocationChanges];
-        [self stopUpdatingLocation];
+        [m_pLocationManager stopMonitoringSignificantLocationChanges];
+        [m_pLocationManager stopUpdatingLocation];
     }
 }
 
@@ -126,21 +133,21 @@
     
     if ( location.speed < self.minSpeed )
     {
-        if ( fabs(self.distanceFilter-self.minFilter) > 0.1f )
+        if ( fabs(m_pLocationManager.distanceFilter - self.minFilter) > 0.1f )
         {
-            self.distanceFilter = self.minFilter;
+            m_pLocationManager.distanceFilter = self.minFilter;
         }
     }
     else
     {
-        CGFloat lastSpeed = self.distanceFilter/self.minInteval;
+        CGFloat lastSpeed = m_pLocationManager.distanceFilter/self.minInteval;
         
         if ( (fabs(lastSpeed-location.speed)/lastSpeed > 0.1f) || (lastSpeed < 0) )
         {
             CGFloat newSpeed  = (int)(location.speed+0.5f);
-            CGFloat newFilter = newSpeed*self.minInteval;
+            CGFloat newFilter = newSpeed * self.minInteval;
             
-            self.distanceFilter = newFilter;
+            m_pLocationManager.distanceFilter = newFilter;
         }
     }
 }
@@ -180,6 +187,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+    
+    [AppDelegate HideLoading];
 }
 
 - (void)beingBackgroundUpdateTask:(CLLocation*)location

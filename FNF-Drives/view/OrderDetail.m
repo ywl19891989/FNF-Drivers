@@ -7,13 +7,17 @@
 //
 
 #import "OrderDetail.h"
+#import "DXPopover.h"
+#import "FoodListCell.h"
 
-@interface OrderDetail ()
+@interface OrderDetail () <UITableViewDataSource, UITableViewDelegate>
 {
     NSDictionary* m_pCurOrderInfo;
     int m_iCurOrderState;
     int m_iCurOrderID;
     UITextField* m_pInputCache;
+    UITableView* m_pTableView;
+    DXPopover* m_pPop;
 }
 @end
 
@@ -32,13 +36,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    m_pTableView = [[UITableView alloc] init];
+    m_pTableView.frame = CGRectMake(0, 0, 300, 350);
+    m_pTableView.dataSource = self;
+    m_pTableView.delegate = self;
+    [m_pTableView setSeparatorColor:[UIColor clearColor]];
+    
+    m_pPop = [DXPopover new];
 
     NSDictionary* curOrderInfo = [NetWorkManager GetCurOrderInfo];
     m_pCurOrderInfo = curOrderInfo;
     m_iCurOrderID = [curOrderInfo[@"ID"] intValue];
     m_iCurOrderState = [curOrderInfo[@"OrderState"] intValue];
 
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, 550);
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, 770);
     
     [self.pickerView setHidden:YES];
     
@@ -58,11 +70,20 @@
 //            RestaurantFinishTime = "";
 //            TotalAmount = "24.8";
 //        };
+        m_pCurOrderInfo = data;
         
-        [self.titleLable setText:[NSString stringWithFormat:@"%d", [data[@"ID"] intValue]]];
-        [self.addressLable setText:data[@"AddressDetail"]];
+        
+        NSString* orderCode = [NSString stringWithFormat:@"%@", data[@"OrderCode"]];
+        if ([orderCode length] > 4) {
+            orderCode = [orderCode substringFromIndex:[orderCode length] - 4];
+        }
+        
+        [self.customerNameLabel setText:data[@"CustomerName"]];
+        [self.merchantNameLabel setText:data[@"MerchantName"]];
+        [self.titleLable setText:orderCode];
+        [self.addressLabel setText:data[@"AddressDetail"]];
         [self.phoneNumLabel setText:data[@"Mobile"]];
-        [self.amountLabel setText:[NSString stringWithFormat:@"%d", [data[@"TotalAmount"] intValue]]];
+        [self.amountLabel setText:[NSString stringWithFormat:@"%.2f", [data[@"PayAmount"] floatValue]]];
         [self.paymentLabel setText:data[@"Pay"]];
         [self.notesLabel setText:data[@"Remark"]];
         [self.resphoneNumLabel setText:data[@"MerchantPhone"]];
@@ -72,6 +93,11 @@
             [self.changeTitle setText:@"Restaurant finish time"];
             [self.cusSetTimeLabel setText:data[@"RestaurantFinishTime"]];
             [self.onlyBtn setTitle:@"Confirm" forState:UIControlStateNormal];
+            
+            if ([data valueForKey:@"DriverConfirmTime"] != nil && [[data valueForKey:@"DriverConfirmTime"] length] > 0) {
+                [self.onlyBtn setHidden:YES];
+            }
+            
         } else if (m_iCurOrderState == 2) {
             [self.deliverView setHidden:YES];
             [self.changeTitle setText:@"Customer setting time"];
@@ -116,10 +142,19 @@
     [AppDelegate jumpToMain];
 }
 
-- (IBAction)OnClickSetting:(id)sender {
+- (IBAction)OnClickDetail:(id)sender {
+    [m_pTableView reloadData];
+    CGPoint startPoint =
+    CGPointMake(CGRectGetMidX(self.detailBtn.frame), CGRectGetMaxY(self.detailBtn.frame) + 5);
+    [m_pPop showAtPoint:startPoint
+         popoverPostion:DXPopoverPositionDown
+        withContentView:m_pTableView
+                 inView:self.view];
 }
 
 - (IBAction)OnClickAddr:(id)sender {
+    [NetWorkManager SetCurAddress:[self.addressLabel text]];
+    [AppDelegate jumpToMap];
 }
 
 - (IBAction)OnClickCall:(id)sender {
@@ -127,6 +162,7 @@
 }
 
 - (IBAction)OnClickNotes:(id)sender {
+    [AppDelegate ShowTips:m_pCurOrderInfo[@"Remark"]];
 }
 
 - (IBAction)OnClickResCall:(id)sender {
@@ -210,6 +246,35 @@
             [m_pInputCache setText:[tt text]];
         }
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [m_pPop dismiss];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (m_pCurOrderInfo[@"DetailList"]) {
+        return [m_pCurOrderInfo[@"DetailList"] count];
+    }
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellId = @"cellIdentifier";
+    FoodListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"FoodListCell" owner:self options:nil] objectAtIndex:0];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    }
+    NSDictionary* info = [m_pCurOrderInfo[@"DetailList"] objectAtIndex:indexPath.row];
+    [cell.nameLabel setText:info[@"ProductName"]];
+    [cell.numLabel setText:[NSString stringWithFormat:@"x%@", info[@"BuyQty"]]];
+    NSString* priceStr = [NSString stringWithFormat:@"%@", info[@"Price"]];
+    float priceVal = [priceStr floatValue];
+    [cell.priceLabel setText:[NSString stringWithFormat:@"$%.2f", priceVal]];
+    
+    return cell;
 }
 
 @end

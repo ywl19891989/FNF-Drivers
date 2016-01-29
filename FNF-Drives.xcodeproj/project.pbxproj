@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1036E31C59C3BA00035A47 /* FoodListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1036E11C59C3BA00035A47 /* FoodListCell.m */; };
+		2F1036E41C59C3BA00035A47 /* FoodListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F1036E21C59C3BA00035A47 /* FoodListCell.xib */; };
+		2F1036ED1C5A624100035A47 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1036EB1C5A624100035A47 /* MapView.m */; };
+		2F1036EE1C5A624100035A47 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F1036EC1C5A624100035A47 /* MapView.xib */; };
 		5C0048201B8CBE0100203510 /* Cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C00481F1B8CBE0100203510 /* Cover.jpg */; };
 		5C0048241B8CBE1400203510 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0048221B8CBE1400203510 /* CoverView.m */; };
 		5C0048251B8CBE1400203510 /* CoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0048231B8CBE1400203510 /* CoverView.xib */; };
@@ -164,6 +168,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F1036E01C59C3BA00035A47 /* FoodListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodListCell.h; sourceTree = "<group>"; };
+		2F1036E11C59C3BA00035A47 /* FoodListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodListCell.m; sourceTree = "<group>"; };
+		2F1036E21C59C3BA00035A47 /* FoodListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodListCell.xib; sourceTree = "<group>"; };
+		2F1036EA1C5A624100035A47 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		2F1036EB1C5A624100035A47 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		2F1036EC1C5A624100035A47 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		5C00481F1B8CBE0100203510 /* Cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cover.jpg; sourceTree = "<group>"; };
 		5C0048211B8CBE1400203510 /* CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverView.h; sourceTree = "<group>"; };
 		5C0048221B8CBE1400203510 /* CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverView.m; sourceTree = "<group>"; };
@@ -547,6 +557,9 @@
 		5C2701741B7CE55E00F58ED1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2F1036EA1C5A624100035A47 /* MapView.h */,
+				2F1036EB1C5A624100035A47 /* MapView.m */,
+				2F1036EC1C5A624100035A47 /* MapView.xib */,
 				5C2701781B7CE55E00F58ED1 /* cell */,
 				5C0048211B8CBE1400203510 /* CoverView.h */,
 				5C0048221B8CBE1400203510 /* CoverView.m */,
@@ -576,6 +589,9 @@
 		5C2701781B7CE55E00F58ED1 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				2F1036E01C59C3BA00035A47 /* FoodListCell.h */,
+				2F1036E11C59C3BA00035A47 /* FoodListCell.m */,
+				2F1036E21C59C3BA00035A47 /* FoodListCell.xib */,
 				5C7E71191B9F2B830052FFED /* MessageDetailCell.h */,
 				5C7E711A1B9F2B830052FFED /* MessageDetailCell.m */,
 				5C7E711B1B9F2B830052FFED /* MessageDetailCell.xib */,
@@ -1074,6 +1090,7 @@
 				5CEE70221AC4E52000AFC202 /* OrderRecordTitle.png in Resources */,
 				5C344E061AAF49970030EAB1 /* home_btn1_2.png in Resources */,
 				5C9B60551AA4B985003A7DCF /* unicode_to_hanyu_pinyin.txt in Resources */,
+				2F1036E41C59C3BA00035A47 /* FoodListCell.xib in Resources */,
 				5C7E71341B9F2DCC0052FFED /* bottom_message2.png in Resources */,
 				5C344E0E1AAF49970030EAB1 /* home_btn5_2.png in Resources */,
 				5C7E71331B9F2DCC0052FFED /* bottom_message1.png in Resources */,
@@ -1088,6 +1105,7 @@
 				5C344E121AAF49970030EAB1 /* home_btn7_2.png in Resources */,
 				5CFDC47A1ADEB5D60081B052 /* my_alipay_code.png in Resources */,
 				5C7E71221B9F2B830052FFED /* MessageListCell.xib in Resources */,
+				2F1036EE1C5A624100035A47 /* MapView.xib in Resources */,
 				5C00482A1B8CBF0100203510 /* LoginView.xib in Resources */,
 				5C344E051AAF49970030EAB1 /* home_btn1_1.png in Resources */,
 				5CFDC4AD1AE15A460081B052 /* 37x-Checkmark.png in Resources */,
@@ -1187,6 +1205,7 @@
 				5C9B604C1AA4B985003A7DCF /* JGProgressHUDRingIndicatorView.m in Sources */,
 				5C9B60461AA4B985003A7DCF /* JGProgressHUDAnimation.m in Sources */,
 				5C9B60351AA4B985003A7DCF /* AFURLRequestSerialization.m in Sources */,
+				2F1036ED1C5A624100035A47 /* MapView.m in Sources */,
 				5C7E71291B9F2B8B0052FFED /* MessageDetail.m in Sources */,
 				5C0048291B8CBF0100203510 /* LoginView.m in Sources */,
 				5C20E63C1ACDA919004A5BE0 /* UzysGroupPickerViewController.m in Sources */,
@@ -1198,6 +1217,7 @@
 				5C9B60521AA4B985003A7DCF /* PinyinFormatter.m in Sources */,
 				5C0048241B8CBE1400203510 /* CoverView.m in Sources */,
 				5C9B60531AA4B985003A7DCF /* PinYinForObjc.m in Sources */,
+				2F1036E31C59C3BA00035A47 /* FoodListCell.m in Sources */,
 				5C20E63D1ACDA919004A5BE0 /* UzysGroupViewCell.m in Sources */,
 				5C20E6531AD0435B004A5BE0 /* DXPopover.m in Sources */,
 				5CAA28671AA5F7980062B9FC /* UIImage+ColorAtPixel.m in Sources */,
@@ -1329,6 +1349,7 @@
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",
 				);
 				INFOPLIST_FILE = "FNF-Drives/FNF-Drives-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",
@@ -1361,6 +1382,7 @@
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",
 				);
 				INFOPLIST_FILE = "FNF-Drives/FNF-Drives-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FNF-Drives/libs/alipay",

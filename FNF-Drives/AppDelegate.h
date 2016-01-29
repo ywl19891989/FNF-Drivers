@@ -19,6 +19,7 @@
 + (void) jumpToMsgList;
 + (void) jumpToMsgDetail;
 + (void) jumpToSettings;
++ (void) jumpToMap;
 
 + (void) ShowTips:(NSString*)tipsText;
 + (void) ShowToast:(NSString*)toastText;

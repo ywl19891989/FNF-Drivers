@@ -11,7 +11,6 @@
 @interface OrderDetail : RootViewController
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITextField *addressLable;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumLabel;
 @property (weak, nonatomic) IBOutlet UITextField *amountLabel;
 @property (weak, nonatomic) IBOutlet UITextField *paymentLabel;
@@ -25,9 +24,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *onlyBtn;
 @property (weak, nonatomic) IBOutlet UIView *pickerView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
+@property (weak, nonatomic) IBOutlet UIButton *detailBtn;
+@property (weak, nonatomic) IBOutlet UITextField *customerNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *merchantNameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *addressLabel;
+
 
 - (IBAction)OnClickBack:(id)sender;
-- (IBAction)OnClickSetting:(id)sender;
+- (IBAction)OnClickDetail:(id)sender;
 - (IBAction)OnClickAddr:(id)sender;
 - (IBAction)OnClickCall:(id)sender;
 - (IBAction)OnClickNotes:(id)sender;

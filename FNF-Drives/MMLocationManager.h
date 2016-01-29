@@ -10,7 +10,7 @@
 @import CoreLocation;
 @import UIKit;
 
-@interface MMLocationManager : CLLocationManager
+@interface MMLocationManager : NSObject
 
 + (instancetype)sharedManager;
 
