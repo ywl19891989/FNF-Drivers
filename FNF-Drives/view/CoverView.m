@@ -39,6 +39,7 @@
 - (IBAction)OnClickEnter:(id)sender
 {
     if ([NetWorkManager GetUserId]) {
+        [NetWorkManager RegisterPush];
         [AppDelegate jumpToMain];
     } else {
         [AppDelegate jumpToLogin];

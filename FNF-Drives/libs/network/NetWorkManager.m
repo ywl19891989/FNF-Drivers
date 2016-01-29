@@ -30,6 +30,16 @@ static NSString* m_sDeviceType = @"iOS";
 
 static NetWorkManager* instance = nil;
 
++ (void)RegisterPush
+{
+    NSString* alias = [NetWorkManager GetUserName];
+    [APService setAlias:alias callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+}
+
++ (void)tagsAliasCallback:(int)iResCode tags:(NSSet*)tags alias:(NSString*)alias {
+    NSLog(@"rescode: %d, \ntags: %@, \nalias: %@\n", iResCode, tags , alias);
+}
+
 + (void)Call:(NSString *)num
 {
     if ([num length] <= 0) {

@@ -42,6 +42,7 @@ typedef void (^FailureCallBack)(AFHTTPRequestOperation *operation, NSError *erro
 
 + (void) SetUserInfo:(NSDictionary*)info;
 + (void) InitUserInfo;
++ (void) RegisterPush;
 
 NM_PROPERTY_DECLARE(NSArray*, NewOrderList);
 NM_PROPERTY_DECLARE(NSArray*, ConfirmedOrderList);
